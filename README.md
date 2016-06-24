@@ -24,11 +24,15 @@ So try it !
 </p>
 
 ## INSTALLATION
-####COCOAPODS
+
+####CocoaPods
 ```
 pod 'AlertViewLoveNotification'
 ```
 
+#### Manually
+1. Download and drop ```AlertViewLoveNotification.swift``` in your project.  
+2. Congratulations! 
 
 ## USAGE
 ```swift
