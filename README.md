@@ -1,4 +1,6 @@
-# AlertViewLoveNotification
+<p align="center">
+ <img src ="https://raw.githubusercontent.com/PhilippeBoisney/AlertViewLoveNotification/master/bandeau.png", align="center"/>
+</p>
 A simple and attractive AlertView **to ask permission to your users for Push Notification.**
 
 [![Platform](http://img.shields.io/badge/platform-ios-blue.svg?style=flat
