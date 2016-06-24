@@ -361,7 +361,8 @@ public class AlertViewLoveNotification: UIView {
                 // On main thread
                 dispatch_async(dispatch_get_main_queue()) {
                     () -> Void in
-                    self.removeFromSuperview()
+                    self.contenerForImage.removeFromSuperview()
+                    self.removeFromSuperview()                    
                     self.layerBlack.removeFromSuperview()
                 }
         })
