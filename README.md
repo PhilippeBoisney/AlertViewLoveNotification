@@ -84,7 +84,7 @@ self.alertView.colorTextColorButtonNO = UIColor(red:0.29, green:0.29, blue:0.29,
 - [x] Fully customizable
 
 ## Version
-1.0
+1.1
 
 ## Author
 Philippe BOISNEY (phil.boisney(@)gmail.com)
