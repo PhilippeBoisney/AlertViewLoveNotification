@@ -16,7 +16,7 @@ So try it !
 
 ## DEMO
 <p align="center">
- <img src ="https://raw.githubusercontent.com/PhilippeBoisney/AlertViewLoveNotification/master/demo.gif", width=200, height=350, align="left"/>
+ <img src ="https://raw.githubusercontent.com/PhilippeBoisney/AlertViewLoveNotification/master/demo.gif", width=600, height=350, align="left"/>
  <img src ="https://raw.githubusercontent.com/PhilippeBoisney/AlertViewLoveNotification/master/screenshot.png", height=350/>
 </p>
 
