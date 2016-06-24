@@ -1,5 +1,5 @@
 # AlertViewLoveNotification
-A simple and attractive AlertView **to ask permission to your users for Notification Push.**
+A simple and attractive AlertView **to ask permission to your users for Push Notification.**
 
 [![Platform](http://img.shields.io/badge/platform-ios-blue.svg?style=flat
 )](https://developer.apple.com/iphone/index.action)
