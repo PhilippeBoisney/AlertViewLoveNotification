@@ -10,14 +10,15 @@ A simple and attractive AlertView **to ask permission to your users for Notifica
 
 ## PRESENTATION
 
-Ask permission to user for push notification is really important. But the native alertview is so ugly and often means SPAM for user..
-With AlertViewLoveNotification, asking permission for push notification becomes easy and beautiful.
+<p>Ask permission to user for push notification is really important. But the native alertview is so ugly and often means SPAM for user..<br>
+With AlertViewLoveNotification, asking permission for push notification <b>becomes easy and beautiful.</b><br>
 So try it !
+</p>
 
 ## DEMO
 <p align="center">
- <img src ="https://raw.githubusercontent.com/PhilippeBoisney/AlertViewLoveNotification/master/demo.gif", width=320, height=480, align="left"/>
- <img src ="https://raw.githubusercontent.com/PhilippeBoisney/AlertViewLoveNotification/master/screenshot.png", height=480/>
+ <img src ="https://raw.githubusercontent.com/PhilippeBoisney/AlertViewLoveNotification/master/demo.gif", width=480, height=320, align="left"/>
+ <img src ="https://raw.githubusercontent.com/PhilippeBoisney/AlertViewLoveNotification/master/screenshot.png", height=320/>
 </p>
 
 ## INSTALLATION
