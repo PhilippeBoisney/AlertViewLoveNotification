@@ -364,6 +364,16 @@ public class AlertViewLoveNotification: UIView {
                     self.contenerForImage.removeFromSuperview()
                     self.removeFromSuperview()
                     self.layerBlack.removeFromSuperview()
+                    self.buttonYES.removeFromSuperview()
+                    self.buttonNO.removeFromSuperview()
+                    self.labelTitle.removeFromSuperview()
+                    self.labelDescription.removeFromSuperview()
+                    self.topSpace.removeFromSuperview()
+                    self.labelsSpace.removeFromSuperview()
+                    self.imageLabelSpace.removeFromSuperview()
+                    self.imageButtonSpace.removeFromSuperview()
+                    self.imageView.removeFromSuperview()
+                    self.contenerForImage.removeFromSuperview()
                 }
         })
     }
