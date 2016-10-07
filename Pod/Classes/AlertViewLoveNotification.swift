@@ -18,65 +18,65 @@
 import UIKit
 import UserNotifications
 
-public class AlertViewLoveNotification: UIView {
+open class AlertViewLoveNotification: UIView {
     
     //FOR DATA  ------------------------
-    private var imageName: String!
-    private var labelTitleText: String!
-    private var labelDescriptionText: String!
-    private var buttonYESText: String!
-    private var buttonNOText: String!
-    private var labelTitleSize: CGFloat = 15
-    private var labelDescriptionSize: CGFloat = 10
-    private var labelButtonSize: CGFloat = 13
+    fileprivate var imageName: String!
+    fileprivate var labelTitleText: String!
+    fileprivate var labelDescriptionText: String!
+    fileprivate var buttonYESText: String!
+    fileprivate var buttonNOText: String!
+    fileprivate var labelTitleSize: CGFloat = 15
+    fileprivate var labelDescriptionSize: CGFloat = 10
+    fileprivate var labelButtonSize: CGFloat = 13
     
     //FOR DESIGN    ------------------------
-    private var buttonYES: UIButton!
-    private var buttonNO: UIButton!
-    private var labelTitle: UILabel!
-    private var labelDescription: UILabel!
-    private var imageView: UIImageView!
+    fileprivate var buttonYES: UIButton!
+    fileprivate var buttonNO: UIButton!
+    fileprivate var labelTitle: UILabel!
+    fileprivate var labelDescription: UILabel!
+    fileprivate var imageView: UIImageView!
     
     //FOR (BETTER) DESIGN ------------------
-    private var topSpace: UIView!
-    private var labelsSpace: UIView!
-    private var imageLabelSpace: UIView!
-    private var imageButtonSpace: UIView!
-    private var layerBlack: UIView!
-    private var contenerForImage: UIView!
+    fileprivate var topSpace: UIView!
+    fileprivate var labelsSpace: UIView!
+    fileprivate var imageLabelSpace: UIView!
+    fileprivate var imageButtonSpace: UIView!
+    fileprivate var layerBlack: UIView!
+    fileprivate var contenerForImage: UIView!
     
     // PUBLIC VARS --------------------------------------------------
     
     ///Height of each view (Total of this height MUST be equal to 1)
-    public var heightOfButtonYes: CGFloat = 0.1
-    public var heightOfButtonNo: CGFloat = 0.1
-    public var heightSpaceBetweenViews: CGFloat = 0.05 ///There is 4 spaces
-    public var heightOfContenerForImage: CGFloat = 0.35
-    public var heightOfTitle: CGFloat = 0.1
-    public var heightOfDescription: CGFloat = 0.15
+    open var heightOfButtonYes: CGFloat = 0.1
+    open var heightOfButtonNo: CGFloat = 0.1
+    open var heightSpaceBetweenViews: CGFloat = 0.05 ///There is 4 spaces
+    open var heightOfContenerForImage: CGFloat = 0.35
+    open var heightOfTitle: CGFloat = 0.1
+    open var heightOfDescription: CGFloat = 0.15
     
     ///Width of each view
-    public var widthOfImage: CGFloat = 0.9
-    public var widthOfTitle: CGFloat = 0.7
-    public var widthOfDescription: CGFloat = 0.9
-    public var widthForButtons: CGFloat = 0.8
+    open var widthOfImage: CGFloat = 0.9
+    open var widthOfTitle: CGFloat = 0.7
+    open var widthOfDescription: CGFloat = 0.9
+    open var widthForButtons: CGFloat = 0.8
     
-    public var heightOfImage: CGFloat = 0.7
+    open var heightOfImage: CGFloat = 0.7
     
     ///Colors of views
-    public var colorLabelTitle = UIColor(red:0.29, green:0.29, blue:0.29, alpha:1.0)
-    public var colorLabelDescription = UIColor(red:0.29, green:0.29, blue:0.29, alpha:1.0)
+    open var colorLabelTitle = UIColor(red:0.29, green:0.29, blue:0.29, alpha:1.0)
+    open var colorLabelDescription = UIColor(red:0.29, green:0.29, blue:0.29, alpha:1.0)
     
-    public var colorBackgroundAlertView = UIColor(red:0.87, green:0.93, blue:0.95, alpha:1.0)
+    open var colorBackgroundAlertView = UIColor(red:0.87, green:0.93, blue:0.95, alpha:1.0)
     
-    public var colorBacgroundButtonYes = UIColor(red:0.96, green:0.56, blue:0.46, alpha:1.0)
-    public var colorTextColorButtonYes = UIColor.white
+    open var colorBacgroundButtonYes = UIColor(red:0.96, green:0.56, blue:0.46, alpha:1.0)
+    open var colorTextColorButtonYes = UIColor.white
     
-    public var colorBacgroundButtonNO = UIColor.clear
-    public var colorTextColorButtonNO = UIColor(red:0.29, green:0.29, blue:0.29, alpha:1.0)
+    open var colorBacgroundButtonNO = UIColor.clear
+    open var colorTextColorButtonNO = UIColor(red:0.29, green:0.29, blue:0.29, alpha:1.0)
     
     // SIZE OF ALERTVIEW  ------------------------------
-    private var percentageRatioHeight: CGFloat {
+    fileprivate var percentageRatioHeight: CGFloat {
         get {
             if DeviceType.IS_IPAD || DeviceType.IS_IPAD_PRO {
                 return 0.6
@@ -86,7 +86,7 @@ public class AlertViewLoveNotification: UIView {
         }
     }
     
-    private var percentageRatioWidth: CGFloat {
+    fileprivate var percentageRatioWidth: CGFloat {
         get {
             if DeviceType.IS_IPAD || DeviceType.IS_IPAD_PRO {
                 return 0.6
@@ -125,7 +125,7 @@ public class AlertViewLoveNotification: UIView {
     // MARK: PUBLIC FUNCTIONS    --------------------------------------------------------------
     //-----------------------------------------------------------------------------------------
     
-    public func show() {
+    open func show() {
         
         self.configure()
         
@@ -151,13 +151,13 @@ public class AlertViewLoveNotification: UIView {
             self.addSubview(self.contenerForImage)
             superView.addSubview(self)
             
-            self.configureConstraints(superView: topController.view)
+            self.configureConstraints(topController.view)
             self.animateForOpening()
         }
     }
     
     //Hide onboarding with animation
-    public func hide(){
+    open func hide(){
         DispatchQueue.main.async {
             self.animateForEnding()
         }
@@ -170,7 +170,7 @@ public class AlertViewLoveNotification: UIView {
     
     
     //MARK: FOR CONFIGURATION    --------------------------------------
-    private func configure() {
+    fileprivate func configure() {
         
         self.contenerForImage = UIView(frame: CGRect(origin: CGPoint(x: 0,y :0), size: CGSize(width: 0, height: 0)))
         
@@ -228,7 +228,7 @@ public class AlertViewLoveNotification: UIView {
     //MARK: FOR CONSTRAINTS --------------------------------
     // -----------------------------------------------------
     
-    private func configureConstraints(superView: UIView) {
+    fileprivate func configureConstraints(_ superView: UIView) {
         
         self.translatesAutoresizingMaskIntoConstraints = false
         self.buttonYES.translatesAutoresizingMaskIntoConstraints = false
@@ -357,7 +357,7 @@ public class AlertViewLoveNotification: UIView {
     //MARK: FOR ANIMATIONS ---------------------------------
     // -----------------------------------------------------
     
-    private func animateForOpening(){
+    fileprivate func animateForOpening(){
         self.alpha = 1.0
         self.transform = CGAffineTransform(scaleX: 0.3, y: 0.3)
         UIView.animate(withDuration: 1, delay: 0.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: [], animations: {
@@ -365,7 +365,7 @@ public class AlertViewLoveNotification: UIView {
             }, completion: nil)
     }
     
-    private func animateForEnding(){
+    fileprivate func animateForEnding(){
         UIView.animate(withDuration: 0.2, delay: 0.0, options: UIViewAnimationOptions.curveEaseOut, animations: {
             self.alpha = 0.0
             }, completion: {
@@ -395,25 +395,32 @@ public class AlertViewLoveNotification: UIView {
     
     func onClick(){
         self.hide()
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert])
-        { (granted, error) in
-            if granted == true {
-                UIApplication.shared.registerForRemoteNotifications()
+        if #available(iOS 10.0, *) {
+            UNUserNotificationCenter.current().requestAuthorization(options: [.alert])
+            { (granted, error) in
+                if granted == true {
+                    UIApplication.shared.registerForRemoteNotifications()
+                }
             }
+        } else {
+            let notificationTypes: UIUserNotificationType = [UIUserNotificationType.alert, UIUserNotificationType.badge, UIUserNotificationType.sound]
+            let pushNotificationSettings = UIUserNotificationSettings(types: notificationTypes, categories: nil)
+            UIApplication.shared.registerUserNotificationSettings(pushNotificationSettings)
+            UIApplication.shared.registerForRemoteNotifications()
         }
     }
     
     // --------------------------------------------------------------
     //MARK: NOTIFICATIONS PROCESS -----------------------------------
     // --------------------------------------------------------------
-    private func interceptOrientationChange(){
+    fileprivate func interceptOrientationChange(){
         UIDevice.current.beginGeneratingDeviceOrientationNotifications()
         NotificationCenter.default.addObserver(self, selector: #selector(AlertViewLoveNotification.onOrientationChange), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
     }
     
     func onOrientationChange(){
         if let superview = self.superview {
-            self.configureConstraints(superView: superview)
+            self.configureConstraints(superview)
         }
     }
     
@@ -479,7 +486,7 @@ public class AlertViewLoveNotification: UIView {
     //MARK: UTILS    ---------------------------------------
     // -----------------------------------------------------
     
-    private func getTopViewController() -> UIViewController? {
+    fileprivate func getTopViewController() -> UIViewController? {
         var topController: UIViewController? = UIApplication.shared.keyWindow?.rootViewController
         while topController?.presentedViewController != nil {
             topController = topController?.presentedViewController
