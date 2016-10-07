@@ -395,12 +395,19 @@ open class AlertViewLoveNotification: UIView {
     
     func onClick(){
         self.hide()
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert])
-        { (granted, error) in
-            if granted == true {
-                UIApplication.shared.registerForRemoteNotifications()
+        if #available(iOS 10.0, *) {
+            UNUserNotificationCenter.current().requestAuthorization(options: [.alert])
+            { (granted, error) in
+                if granted == true {
+                    UIApplication.shared.registerForRemoteNotifications()
+                }
             }
-        }
+        } else {
+            let notificationTypes: UIUserNotificationType = [UIUserNotificationType.alert, UIUserNotificationType.badge, UIUserNotificationType.sound]
+            let pushNotificationSettings = UIUserNotificationSettings(types: notificationTypes, categories: nil)
+            UIApplication.shared.registerUserNotificationSettings(pushNotificationSettings)
+            UIApplication.shared.registerForRemoteNotifications()
+        }       
     }
     
     // --------------------------------------------------------------
