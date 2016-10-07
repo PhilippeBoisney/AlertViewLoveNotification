@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0730"
+   LastUpgradeVersion = "0800"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "37024AEE1D1D351500C6E6EC"
+               BlueprintIdentifier = "3721E0491DA7790200DC9E8F"
                BuildableName = "AlertViewLoveNotification.app"
                BlueprintName = "AlertViewLoveNotification"
                ReferencedContainer = "container:AlertViewLoveNotification.xcodeproj">
@@ -32,7 +32,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "37024AEE1D1D351500C6E6EC"
+            BlueprintIdentifier = "3721E0491DA7790200DC9E8F"
             BuildableName = "AlertViewLoveNotification.app"
             BlueprintName = "AlertViewLoveNotification"
             ReferencedContainer = "container:AlertViewLoveNotification.xcodeproj">
@@ -55,7 +55,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "37024AEE1D1D351500C6E6EC"
+            BlueprintIdentifier = "3721E0491DA7790200DC9E8F"
             BuildableName = "AlertViewLoveNotification.app"
             BlueprintName = "AlertViewLoveNotification"
             ReferencedContainer = "container:AlertViewLoveNotification.xcodeproj">
@@ -74,7 +74,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "37024AEE1D1D351500C6E6EC"
+            BlueprintIdentifier = "3721E0491DA7790200DC9E8F"
             BuildableName = "AlertViewLoveNotification.app"
             BlueprintName = "AlertViewLoveNotification"
             ReferencedContainer = "container:AlertViewLoveNotification.xcodeproj">

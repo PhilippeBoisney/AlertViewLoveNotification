@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  AlertViewLoveNotification
 //
-//  Created by Philippe on 24/06/2016.
+//  Created by Philippe on 07/10/2016.
 //  Copyright © 2016 CookMinute. All rights reserved.
 //
 
@@ -11,23 +11,19 @@ import UIKit
 class ViewController: UIViewController {
     
     var alertView: AlertViewLoveNotification!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.alertView = AlertViewLoveNotification(imageName: "iconNotification", labelTitle: "ENABLE PUSH NOTIFICATIONS", labelDescription: "Would you like to be alerted about us, at any moment, even when you're sleeping ? Because we miss you... Always.", buttonYESTitle: "Yes, Of course !", buttonNOTitle: "No, sorry.")
-    
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
-    @IBAction func onTouch(sender: AnyObject) {
-        //self.configureAnOtherDesign()
+    
+    @IBAction func onTouch(_ sender: AnyObject) {
         self.alertView.show()
     }
-    
     func configureAnOtherDesign(){
         
         ///Height of each view (Total of this height MUST be equal to 1)
@@ -50,14 +46,12 @@ class ViewController: UIViewController {
         self.alertView.colorLabelTitle = UIColor(red:0.29, green:0.29, blue:0.29, alpha:1.0)
         self.alertView.colorLabelDescription = UIColor(red:0.29, green:0.29, blue:0.29, alpha:1.0)
         
-        self.alertView.colorBackgroundAlertView = UIColor.redColor()
+        self.alertView.colorBackgroundAlertView = UIColor.red
         
         self.alertView.colorBacgroundButtonYes = UIColor(red:0.96, green:0.56, blue:0.46, alpha:1.0)
-        self.alertView.colorTextColorButtonYes = UIColor.whiteColor()
+        self.alertView.colorTextColorButtonYes = UIColor.white
         
-        self.alertView.colorBacgroundButtonNO = UIColor.clearColor()
+        self.alertView.colorBacgroundButtonNO = UIColor.clear
         self.alertView.colorTextColorButtonNO = UIColor(red:0.29, green:0.29, blue:0.29, alpha:1.0)
     }
-
 }
-

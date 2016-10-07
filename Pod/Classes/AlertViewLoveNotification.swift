@@ -1,4 +1,12 @@
 //
+//  AlertViewLoveNotification.swift
+//  AlertViewLoveNotification
+//
+//  Created by Philippe on 07/10/2016.
+//  Copyright © 2016 CookMinute. All rights reserved.
+//
+
+//
 //  AlertOnboarding.swift
 //  AlertOnboarding
 //
@@ -8,6 +16,7 @@
 
 
 import UIKit
+import UserNotifications
 
 public class AlertViewLoveNotification: UIView {
     
@@ -61,9 +70,9 @@ public class AlertViewLoveNotification: UIView {
     public var colorBackgroundAlertView = UIColor(red:0.87, green:0.93, blue:0.95, alpha:1.0)
     
     public var colorBacgroundButtonYes = UIColor(red:0.96, green:0.56, blue:0.46, alpha:1.0)
-    public var colorTextColorButtonYes = UIColor.whiteColor()
+    public var colorTextColorButtonYes = UIColor.white
     
-    public var colorBacgroundButtonNO = UIColor.clearColor()
+    public var colorBacgroundButtonNO = UIColor.clear
     public var colorTextColorButtonNO = UIColor(red:0.29, green:0.29, blue:0.29, alpha:1.0)
     
     // SIZE OF ALERTVIEW  ------------------------------
@@ -90,7 +99,7 @@ public class AlertViewLoveNotification: UIView {
     //INITIALIZERS
     
     public init (imageName: String, labelTitle: String, labelDescription: String, buttonYESTitle: String, buttonNOTitle: String) {
-        super.init(frame: CGRectMake(0,0,0,0))
+        super.init(frame: CGRect(origin: CGPoint(x: 0,y :0), size: CGSize(width: 0, height: 0)))
         
         self.imageName = imageName
         self.labelTitleText = labelTitle
@@ -142,14 +151,14 @@ public class AlertViewLoveNotification: UIView {
             self.addSubview(self.contenerForImage)
             superView.addSubview(self)
             
-            self.configureConstraints(topController.view)
+            self.configureConstraints(superView: topController.view)
             self.animateForOpening()
         }
     }
     
     //Hide onboarding with animation
     public func hide(){
-        dispatch_async(dispatch_get_main_queue()) { () -> Void in
+        DispatchQueue.main.async {
             self.animateForEnding()
         }
     }
@@ -163,51 +172,51 @@ public class AlertViewLoveNotification: UIView {
     //MARK: FOR CONFIGURATION    --------------------------------------
     private func configure() {
         
-        self.contenerForImage = UIView(frame: CGRectMake(0,0, 0, 0))
+        self.contenerForImage = UIView(frame: CGRect(origin: CGPoint(x: 0,y :0), size: CGSize(width: 0, height: 0)))
         
         self.imageView = UIImageView(image: UIImage(named: self.imageName))
         
-        self.topSpace = UIView(frame: CGRectMake(0,0, 0, 0))
+        self.topSpace = UIView(frame: CGRect(origin: CGPoint(x: 0,y :0), size: CGSize(width: 0, height: 0)))
         
-        self.imageButtonSpace = UIView(frame: CGRectMake(0,0, 0, 0))
+        self.imageButtonSpace = UIView(frame: CGRect(origin: CGPoint(x: 0,y :0), size: CGSize(width: 0, height: 0)))
         
-        self.imageLabelSpace = UIView(frame: CGRectMake(0,0, 0, 0))
+        self.imageLabelSpace = UIView(frame: CGRect(origin: CGPoint(x: 0,y :0), size: CGSize(width: 0, height: 0)))
         
-        self.labelsSpace = UIView(frame: CGRectMake(0,0, 0, 0))
+        self.labelsSpace = UIView(frame: CGRect(origin: CGPoint(x: 0,y :0), size: CGSize(width: 0, height: 0)))
         
-        self.layerBlack = UIView(frame: CGRectMake(0,0, 0, 0))
-        self.layerBlack.backgroundColor = UIColor.blackColor()
+        self.layerBlack = UIView(frame: CGRect(origin: CGPoint(x: 0,y :0), size: CGSize(width: 0, height: 0)))
+        self.layerBlack.backgroundColor = UIColor.black
         self.layerBlack.alpha = 0.3
         
-        self.buttonYES = UIButton(frame: CGRectMake(0,0, 0, 0))
-        self.buttonYES.setTitle(self.buttonYESText, forState: .Normal)
-        self.buttonYES.setTitleColor(self.colorTextColorButtonYes, forState: .Normal)
+        self.buttonYES = UIButton(frame: CGRect(origin: CGPoint(x: 0,y :0), size: CGSize(width: 0, height: 0)))
+        self.buttonYES.setTitle(self.buttonYESText, for: .normal)
+        self.buttonYES.setTitleColor(self.colorTextColorButtonYes, for: .normal)
         self.buttonYES.backgroundColor = self.colorBacgroundButtonYes
         self.buttonYES.titleLabel?.font = UIFont(name: "Avenir-Medium", size: self.labelButtonSize)
         
-        self.buttonNO = UIButton(frame: CGRectMake(0,0, 0, 0))
-        self.buttonNO.setTitle(self.buttonNOText, forState: .Normal)
-        self.buttonNO.setTitleColor(self.colorTextColorButtonNO, forState: .Normal)
+        self.buttonNO = UIButton(frame: CGRect(origin: CGPoint(x: 0,y :0), size: CGSize(width: 0, height: 0)))
+        self.buttonNO.setTitle(self.buttonNOText, for: .normal)
+        self.buttonNO.setTitleColor(self.colorTextColorButtonNO, for: .normal)
         self.buttonNO.backgroundColor = self.colorBacgroundButtonNO
         self.buttonNO.titleLabel?.font = UIFont(name: "Avenir-Light", size: self.labelButtonSize)
         
-        self.labelTitle = UILabel(frame: CGRectMake(0,0, 0, 0))
+        self.labelTitle = UILabel(frame: CGRect(origin: CGPoint(x: 0,y :0), size: CGSize(width: 0, height: 0)))
         self.labelTitle.textColor = self.colorLabelTitle
         self.labelTitle.font = UIFont(name: "Avenir-Medium", size: self.labelTitleSize)
-        self.labelTitle.textAlignment = NSTextAlignment.Center
+        self.labelTitle.textAlignment = NSTextAlignment.center
         self.labelTitle.numberOfLines = 10
         
-        self.labelDescription = UILabel(frame: CGRectMake(0,0, 0, 0))
+        self.labelDescription = UILabel(frame: CGRect(origin: CGPoint(x: 0,y :0), size: CGSize(width: 0, height: 0)))
         self.labelDescription.font = UIFont(name: "Avenir-Light", size: self.labelDescriptionSize)
-        self.labelDescription.textAlignment = NSTextAlignment.Center
+        self.labelDescription.textAlignment = NSTextAlignment.center
         self.labelDescription.textColor = self.colorLabelDescription
         self.labelDescription.numberOfLines = 10
         
         self.labelTitle.text = self.labelTitleText
         self.labelDescription.text = self.labelDescriptionText
         
-        self.buttonYES.addTarget(self, action: #selector(AlertViewLoveNotification.onClick), forControlEvents: .TouchUpInside)
-        self.buttonNO.addTarget(self, action: #selector(AlertViewLoveNotification.hide), forControlEvents: .TouchUpInside)
+        self.buttonYES.addTarget(self, action: #selector(AlertViewLoveNotification.onClick), for: .touchUpInside)
+        self.buttonNO.addTarget(self, action: #selector(AlertViewLoveNotification.hide), for: .touchUpInside)
         
         self.backgroundColor = self.colorBackgroundAlertView
         
@@ -249,96 +258,99 @@ public class AlertViewLoveNotification: UIView {
         self.imageButtonSpace.removeConstraints(self.imageButtonSpace.constraints)
         self.contenerForImage.removeConstraints(self.contenerForImage.constraints)
         
-        let heightForAlertView = UIScreen.mainScreen().bounds.height*percentageRatioHeight
-        let widthForAlertView = UIScreen.mainScreen().bounds.width*percentageRatioWidth
+        let heightForAlertView = UIScreen.main.bounds.height*percentageRatioHeight
+        let widthForAlertView = UIScreen.main.bounds.width*percentageRatioWidth
         
         let heightForContenerOfImageView = heightForAlertView * self.heightOfContenerForImage
         let widthForContenerOfImageView = widthForAlertView
         
         //Constraints for alertview
-        let horizontalContraintsAlertView = NSLayoutConstraint(item: self, attribute: .CenterXWithinMargins, relatedBy: .Equal, toItem: superView, attribute: .CenterXWithinMargins, multiplier: 1.0, constant: 0)
-        let verticalContraintsAlertView = NSLayoutConstraint(item: self, attribute:.CenterYWithinMargins, relatedBy: .Equal, toItem: superView, attribute: .CenterYWithinMargins, multiplier: 1.0, constant: 0)
-        let heightConstraintForAlertView = NSLayoutConstraint.init(item: self, attribute: .Height, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1, constant: heightForAlertView)
-        let widthConstraintForAlertView = NSLayoutConstraint.init(item: self, attribute: .Width, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1, constant: widthForAlertView)
+        let horizontalContraintsAlertView = NSLayoutConstraint(item: self, attribute: .centerXWithinMargins, relatedBy: .equal, toItem: superView, attribute: .centerXWithinMargins, multiplier: 1.0, constant: 0)
+        let verticalContraintsAlertView = NSLayoutConstraint(item: self, attribute:.centerYWithinMargins, relatedBy: .equal, toItem: superView, attribute: .centerYWithinMargins, multiplier: 1.0, constant: 0)
+        let heightConstraintForAlertView = NSLayoutConstraint.init(item: self, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: heightForAlertView)
+        let widthConstraintForAlertView = NSLayoutConstraint.init(item: self, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: widthForAlertView)
         
         //Constraints for black layer
-        let heightConstraintBlackLayer = NSLayoutConstraint.init(item: self.layerBlack, attribute: .Height, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1, constant: UIScreen.mainScreen().bounds.height)
-        let widthConstraintBlackLayer = NSLayoutConstraint.init(item: self.layerBlack, attribute: .Width, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1, constant: UIScreen.mainScreen().bounds.width)
+        let heightConstraintBlackLayer = NSLayoutConstraint.init(item: self.layerBlack, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.height)
+        let widthConstraintBlackLayer = NSLayoutConstraint.init(item: self.layerBlack, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width)
         
         //Constraints for top space
-        let verticalContraintsTopSpace = NSLayoutConstraint(item: self.topSpace, attribute:.CenterXWithinMargins, relatedBy: .Equal, toItem: self, attribute: .CenterXWithinMargins, multiplier: 1.0, constant: 0)
-        let widthConstraintTopSpace = NSLayoutConstraint(item: self.topSpace, attribute: .Width, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1, constant: widthForAlertView)
-        let heightConstraintTopSpace = NSLayoutConstraint(item: self.topSpace, attribute: .Height, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1, constant: heightForAlertView*self.heightSpaceBetweenViews)
-        let pinContraintsTopTopSpace = NSLayoutConstraint(item: self.topSpace, attribute: .Top, relatedBy: .Equal, toItem: self, attribute: .Top, multiplier: 1.0, constant: 0)
+        let verticalContraintsTopSpace = NSLayoutConstraint(item: self.topSpace, attribute:.centerXWithinMargins, relatedBy: .equal, toItem: self, attribute: .centerXWithinMargins, multiplier: 1.0, constant: 0)
+        let widthConstraintTopSpace = NSLayoutConstraint(item: self.topSpace, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: widthForAlertView)
+        let heightConstraintTopSpace = NSLayoutConstraint(item: self.topSpace, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: heightForAlertView*self.heightSpaceBetweenViews)
+        let pinContraintsTopTopSpace = NSLayoutConstraint(item: self.topSpace, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1.0, constant: 0)
         
         //Constraints for label title
-        let verticalContraintsLabelTitle = NSLayoutConstraint(item: self.labelTitle, attribute:.CenterXWithinMargins, relatedBy: .Equal, toItem: self, attribute: .CenterXWithinMargins, multiplier: 1.0, constant: 0)
-        let widthConstraintLabelTitle = NSLayoutConstraint(item: self.labelTitle, attribute: .Width, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1, constant: widthForAlertView*self.widthOfTitle)
-        let heightConstraintLabelTitle = NSLayoutConstraint(item: self.labelTitle, attribute: .Height, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1, constant: heightForAlertView*self.heightOfTitle)
-        let pinContraintsTopLabelTitle = NSLayoutConstraint(item: self.labelTitle, attribute: .Top, relatedBy: .Equal, toItem: self.topSpace, attribute: .Bottom, multiplier: 1.0, constant: 0)
+        let verticalContraintsLabelTitle = NSLayoutConstraint(item: self.labelTitle, attribute:.centerXWithinMargins, relatedBy: .equal, toItem: self, attribute: .centerXWithinMargins, multiplier: 1.0, constant: 0)
+        let widthConstraintLabelTitle = NSLayoutConstraint(item: self.labelTitle, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: widthForAlertView*self.widthOfTitle)
+        let heightConstraintLabelTitle = NSLayoutConstraint(item: self.labelTitle, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: heightForAlertView*self.heightOfTitle)
+        let pinContraintsTopLabelTitle = NSLayoutConstraint(item: self.labelTitle, attribute: .top, relatedBy: .equal, toItem: self.topSpace, attribute: .bottom, multiplier: 1.0, constant: 0)
         
         //Constraints for labelsSpaces
-        let verticalContraintsLabelsSpaces = NSLayoutConstraint(item: self.labelsSpace, attribute:.CenterXWithinMargins, relatedBy: .Equal, toItem: self, attribute: .CenterXWithinMargins, multiplier: 1.0, constant: 0)
-        let widthConstraintLabelsSpaces = NSLayoutConstraint(item: self.labelsSpace, attribute: .Width, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1, constant: widthForAlertView)
-        let heightConstraintLabelsSpaces = NSLayoutConstraint(item: self.labelsSpace, attribute: .Height, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1, constant: heightForAlertView*self.heightSpaceBetweenViews)
-        let pinContraintsTopLabelsSpaces = NSLayoutConstraint(item: self.labelsSpace, attribute: .Top, relatedBy: .Equal, toItem: labelTitle, attribute: .Bottom, multiplier: 1.0, constant: 0)
+        let verticalContraintsLabelsSpaces = NSLayoutConstraint(item: self.labelsSpace, attribute:.centerXWithinMargins, relatedBy: .equal, toItem: self, attribute: .centerXWithinMargins, multiplier: 1.0, constant: 0)
+        let widthConstraintLabelsSpaces = NSLayoutConstraint(item: self.labelsSpace, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: widthForAlertView)
+        let heightConstraintLabelsSpaces = NSLayoutConstraint(item: self.labelsSpace, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: heightForAlertView*self.heightSpaceBetweenViews)
+        let pinContraintsTopLabelsSpaces = NSLayoutConstraint(item: self.labelsSpace, attribute: .top, relatedBy: .equal, toItem: labelTitle, attribute: .bottom, multiplier: 1.0, constant: 0)
+        
+        
+        
         
         //Constraints for labelDescription
-        let verticalContraintsLabelDescription = NSLayoutConstraint(item: self.labelDescription, attribute:.CenterXWithinMargins, relatedBy: .Equal, toItem: self, attribute: .CenterXWithinMargins, multiplier: 1.0, constant: 0)
-        let widthConstraintLabelDescription = NSLayoutConstraint(item: self.labelDescription, attribute: .Width, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1, constant: widthForAlertView*self.widthOfDescription)
-        let heightConstraintLabelDescription = NSLayoutConstraint(item: self.labelDescription, attribute: .Height, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1, constant: heightForAlertView*self.heightOfDescription)
-        let pinContraintsTopLabelDescription = NSLayoutConstraint(item: self.labelDescription, attribute: .Top, relatedBy: .Equal, toItem: labelsSpace, attribute: .Bottom, multiplier: 1.0, constant: 0)
+        let verticalContraintsLabelDescription = NSLayoutConstraint(item: self.labelDescription, attribute:.centerXWithinMargins, relatedBy: .equal, toItem: self, attribute: .centerXWithinMargins, multiplier: 1.0, constant: 0)
+        let widthConstraintLabelDescription = NSLayoutConstraint(item: self.labelDescription, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: widthForAlertView*self.widthOfDescription)
+        let heightConstraintLabelDescription = NSLayoutConstraint(item: self.labelDescription, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: heightForAlertView*self.heightOfDescription)
+        let pinContraintsTopLabelDescription = NSLayoutConstraint(item: self.labelDescription, attribute: .top, relatedBy: .equal, toItem: labelsSpace, attribute: .bottom, multiplier: 1.0, constant: 0)
         
         //Constraints for imageLabelSpace
-        let verticalContraintsImageLabelSpace = NSLayoutConstraint(item: self.imageLabelSpace, attribute:.CenterXWithinMargins, relatedBy: .Equal, toItem: self, attribute: .CenterXWithinMargins, multiplier: 1.0, constant: 0)
-        let widthConstraintImageLabelSpace = NSLayoutConstraint(item: self.imageLabelSpace, attribute: .Width, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1, constant: widthForAlertView)
-        let heightConstraintImageLabelSpace = NSLayoutConstraint(item: self.imageLabelSpace, attribute: .Height, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1, constant: heightForAlertView*self.heightSpaceBetweenViews)
-        let pinContraintsImageLabelSpace = NSLayoutConstraint(item: self.imageLabelSpace, attribute: .Top, relatedBy: .Equal, toItem: self.labelDescription, attribute: .Bottom, multiplier: 1.0, constant: 0)
+        let verticalContraintsImageLabelSpace = NSLayoutConstraint(item: self.imageLabelSpace, attribute:.centerXWithinMargins, relatedBy: .equal, toItem: self, attribute: .centerXWithinMargins, multiplier: 1.0, constant: 0)
+        let widthConstraintImageLabelSpace = NSLayoutConstraint(item: self.imageLabelSpace, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: widthForAlertView)
+        let heightConstraintImageLabelSpace = NSLayoutConstraint(item: self.imageLabelSpace, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: heightForAlertView*self.heightSpaceBetweenViews)
+        let pinContraintsImageLabelSpace = NSLayoutConstraint(item: self.imageLabelSpace, attribute: .top, relatedBy: .equal, toItem: self.labelDescription, attribute: .bottom, multiplier: 1.0, constant: 0)
         
         //Constraints for contener of imageView
-        let verticalContraintsContenerImageView = NSLayoutConstraint(item: self.contenerForImage, attribute:.CenterXWithinMargins, relatedBy: .Equal, toItem: self, attribute: .CenterXWithinMargins, multiplier: 1.0, constant: 0)
-        let widthConstraintContenerImageView = NSLayoutConstraint(item: self.contenerForImage, attribute: .Width, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1, constant: widthForContenerOfImageView)
-        let heightConstraintContenerImageView = NSLayoutConstraint(item: self.contenerForImage, attribute: .Height, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1, constant: heightForContenerOfImageView)
-        let pinContraintsContenerImageView = NSLayoutConstraint(item: self.contenerForImage, attribute: .Top, relatedBy: .Equal, toItem: self.imageLabelSpace, attribute: .Bottom, multiplier: 1.0, constant: 0)
+        let verticalContraintsContenerImageView = NSLayoutConstraint(item: self.contenerForImage, attribute:.centerXWithinMargins, relatedBy: .equal, toItem: self, attribute: .centerXWithinMargins, multiplier: 1.0, constant: 0)
+        let widthConstraintContenerImageView = NSLayoutConstraint(item: self.contenerForImage, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: widthForContenerOfImageView)
+        let heightConstraintContenerImageView = NSLayoutConstraint(item: self.contenerForImage, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: heightForContenerOfImageView)
+        let pinContraintsContenerImageView = NSLayoutConstraint(item: self.contenerForImage, attribute: .top, relatedBy: .equal, toItem: self.imageLabelSpace, attribute: .bottom, multiplier: 1.0, constant: 0)
         
         //Constraints for imageView
-        let verticalContraintsImageView = NSLayoutConstraint(item: self.imageView, attribute:.CenterXWithinMargins, relatedBy: .Equal, toItem: self.contenerForImage, attribute: .CenterXWithinMargins, multiplier: 1.0, constant: 0)
-        let horizontalContraintsImageView = NSLayoutConstraint(item: self.imageView, attribute:.CenterYWithinMargins, relatedBy: .Equal, toItem: self.contenerForImage, attribute: .CenterYWithinMargins, multiplier: 1.0, constant: 0)
-        let widthConstraintImageImageView = NSLayoutConstraint(item: self.imageView, attribute: .Width, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1, constant: heightForContenerOfImageView*self.widthOfImage)
-        let heightConstraintImageView = NSLayoutConstraint(item: self.imageView, attribute: .Height, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1, constant: heightForContenerOfImageView*self.heightOfImage)
+        let verticalContraintsImageView = NSLayoutConstraint(item: self.imageView, attribute:.centerXWithinMargins, relatedBy: .equal, toItem: self.contenerForImage, attribute: .centerXWithinMargins, multiplier: 1.0, constant: 0)
+        let horizontalContraintsImageView = NSLayoutConstraint(item: self.imageView, attribute:.centerYWithinMargins, relatedBy: .equal, toItem: self.contenerForImage, attribute: .centerYWithinMargins, multiplier: 1.0, constant: 0)
+        let widthConstraintImageImageView = NSLayoutConstraint(item: self.imageView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: heightForContenerOfImageView*self.widthOfImage)
+        let heightConstraintImageView = NSLayoutConstraint(item: self.imageView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: heightForContenerOfImageView*self.heightOfImage)
         
         //Constraints for imageButtonSpace
-        let verticalContraintsImageButtonSpace = NSLayoutConstraint(item: self.imageButtonSpace, attribute:.CenterXWithinMargins, relatedBy: .Equal, toItem: self, attribute: .CenterXWithinMargins, multiplier: 1.0, constant: 0)
-        let widthConstraintImageButtonSpace = NSLayoutConstraint(item: self.imageButtonSpace, attribute: .Width, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1, constant: widthForAlertView)
-        let heightConstraintImageButtonSpace = NSLayoutConstraint(item: self.imageButtonSpace, attribute: .Height, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1, constant: heightForAlertView*self.heightSpaceBetweenViews)
-        let pinContraintsImageButtonSpace = NSLayoutConstraint(item: self.imageButtonSpace, attribute: .Top, relatedBy: .Equal, toItem: self.contenerForImage, attribute: .Bottom, multiplier: 1.0, constant: 0)
+        let verticalContraintsImageButtonSpace = NSLayoutConstraint(item: self.imageButtonSpace, attribute:.centerXWithinMargins, relatedBy: .equal, toItem: self, attribute: .centerXWithinMargins, multiplier: 1.0, constant: 0)
+        let widthConstraintImageButtonSpace = NSLayoutConstraint(item: self.imageButtonSpace, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: widthForAlertView)
+        let heightConstraintImageButtonSpace = NSLayoutConstraint(item: self.imageButtonSpace, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: heightForAlertView*self.heightSpaceBetweenViews)
+        let pinContraintsImageButtonSpace = NSLayoutConstraint(item: self.imageButtonSpace, attribute: .top, relatedBy: .equal, toItem: self.contenerForImage, attribute: .bottom, multiplier: 1.0, constant: 0)
         
         //Constraints for Button YES
-        let verticalContraintsButtonYes = NSLayoutConstraint(item: self.buttonYES, attribute:.CenterXWithinMargins, relatedBy: .Equal, toItem: self, attribute: .CenterXWithinMargins, multiplier: 1.0, constant: 0)
-        let widthConstraintButtonYes = NSLayoutConstraint(item: self.buttonYES, attribute: .Width, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1, constant: widthForAlertView*self.widthForButtons)
-        let heightConstraintButtonYes = NSLayoutConstraint(item: self.buttonYES, attribute: .Height, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1, constant: heightForAlertView*self.heightOfButtonYes)
-        let pinContraintsButtonYes = NSLayoutConstraint(item: self.buttonYES, attribute: .Top, relatedBy: .Equal, toItem: self.imageButtonSpace, attribute: .Bottom, multiplier: 1.0, constant: 0)
+        let verticalContraintsButtonYes = NSLayoutConstraint(item: self.buttonYES, attribute:.centerXWithinMargins, relatedBy: .equal, toItem: self, attribute: .centerXWithinMargins, multiplier: 1.0, constant: 0)
+        let widthConstraintButtonYes = NSLayoutConstraint(item: self.buttonYES, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: widthForAlertView*self.widthForButtons)
+        let heightConstraintButtonYes = NSLayoutConstraint(item: self.buttonYES, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: heightForAlertView*self.heightOfButtonYes)
+        let pinContraintsButtonYes = NSLayoutConstraint(item: self.buttonYES, attribute: .top, relatedBy: .equal, toItem: self.imageButtonSpace, attribute: .bottom, multiplier: 1.0, constant: 0)
         
         //Constraints for Button NO
-        let verticalContraintsButtonNo = NSLayoutConstraint(item: self.buttonNO, attribute:.CenterXWithinMargins, relatedBy: .Equal, toItem: self, attribute: .CenterXWithinMargins, multiplier: 1.0, constant: 0)
-        let widthConstraintButtonNo = NSLayoutConstraint(item: self.buttonNO, attribute: .Width, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1, constant: widthForAlertView*self.widthForButtons)
-        let heightConstraintButtonNo = NSLayoutConstraint(item: self.buttonNO, attribute: .Height, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1, constant: heightForAlertView*self.heightOfButtonNo)
-        let pinContraintsButtonNo = NSLayoutConstraint(item: self.buttonNO, attribute: .Top, relatedBy: .Equal, toItem: self.buttonYES, attribute: .Bottom, multiplier: 1.0, constant: 0)
+        let verticalContraintsButtonNo = NSLayoutConstraint(item: self.buttonNO, attribute:.centerXWithinMargins, relatedBy: .equal, toItem: self, attribute: .centerXWithinMargins, multiplier: 1.0, constant: 0)
+        let widthConstraintButtonNo = NSLayoutConstraint(item: self.buttonNO, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: widthForAlertView*self.widthForButtons)
+        let heightConstraintButtonNo = NSLayoutConstraint(item: self.buttonNO, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: heightForAlertView*self.heightOfButtonNo)
+        let pinContraintsButtonNo = NSLayoutConstraint(item: self.buttonNO, attribute: .top, relatedBy: .equal, toItem: self.buttonYES, attribute: .bottom, multiplier: 1.0, constant: 0)
         
         
-        NSLayoutConstraint.activateConstraints(
+        NSLayoutConstraint.activate(
             [horizontalContraintsAlertView, verticalContraintsAlertView,heightConstraintForAlertView, widthConstraintForAlertView,
-                widthConstraintLabelTitle, heightConstraintLabelTitle, pinContraintsTopLabelTitle, verticalContraintsLabelTitle,
-                verticalContraintsTopSpace, widthConstraintTopSpace, heightConstraintTopSpace, pinContraintsTopTopSpace,
-                heightConstraintBlackLayer, widthConstraintBlackLayer,
-                verticalContraintsLabelsSpaces, widthConstraintLabelsSpaces, heightConstraintLabelsSpaces, pinContraintsTopLabelsSpaces,
-                verticalContraintsLabelDescription, widthConstraintLabelDescription, pinContraintsTopLabelDescription, heightConstraintLabelDescription,
-                verticalContraintsImageLabelSpace, widthConstraintImageLabelSpace, heightConstraintImageLabelSpace, pinContraintsImageLabelSpace,
-                verticalContraintsImageView, widthConstraintImageImageView, heightConstraintImageView, horizontalContraintsImageView,
-                verticalContraintsImageButtonSpace, widthConstraintImageButtonSpace, heightConstraintImageButtonSpace, pinContraintsImageButtonSpace,
-                verticalContraintsButtonYes, widthConstraintButtonYes, heightConstraintButtonYes, pinContraintsButtonYes,
-                verticalContraintsButtonNo, widthConstraintButtonNo, heightConstraintButtonNo, pinContraintsButtonNo,
-                verticalContraintsContenerImageView, widthConstraintContenerImageView, heightConstraintContenerImageView, pinContraintsContenerImageView])
+             widthConstraintLabelTitle, heightConstraintLabelTitle, pinContraintsTopLabelTitle, verticalContraintsLabelTitle,
+             verticalContraintsTopSpace, widthConstraintTopSpace, heightConstraintTopSpace, pinContraintsTopTopSpace,
+             heightConstraintBlackLayer, widthConstraintBlackLayer,
+             verticalContraintsLabelsSpaces, widthConstraintLabelsSpaces, heightConstraintLabelsSpaces, pinContraintsTopLabelsSpaces,
+             verticalContraintsLabelDescription, widthConstraintLabelDescription, pinContraintsTopLabelDescription, heightConstraintLabelDescription,
+             verticalContraintsImageLabelSpace, widthConstraintImageLabelSpace, heightConstraintImageLabelSpace, pinContraintsImageLabelSpace,
+             verticalContraintsImageView, widthConstraintImageImageView, heightConstraintImageView, horizontalContraintsImageView,
+             verticalContraintsImageButtonSpace, widthConstraintImageButtonSpace, heightConstraintImageButtonSpace, pinContraintsImageButtonSpace,
+             verticalContraintsButtonYes, widthConstraintButtonYes, heightConstraintButtonYes, pinContraintsButtonYes,
+             verticalContraintsButtonNo, widthConstraintButtonNo, heightConstraintButtonNo, pinContraintsButtonNo,
+             verticalContraintsContenerImageView, widthConstraintContenerImageView, heightConstraintContenerImageView, pinContraintsContenerImageView])
     }
     
     // -----------------------------------------------------
@@ -347,20 +359,19 @@ public class AlertViewLoveNotification: UIView {
     
     private func animateForOpening(){
         self.alpha = 1.0
-        self.transform = CGAffineTransformMakeScale(0.3, 0.3)
-        UIView.animateWithDuration(1, delay: 0.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: [], animations: {
-            self.transform = CGAffineTransformMakeScale(1, 1)
+        self.transform = CGAffineTransform(scaleX: 0.3, y: 0.3)
+        UIView.animate(withDuration: 1, delay: 0.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: [], animations: {
+            self.transform = CGAffineTransform(scaleX: 1, y: 1)
             }, completion: nil)
     }
     
     private func animateForEnding(){
-        UIView.animateWithDuration(0.2, delay: 0.0, options: UIViewAnimationOptions.CurveEaseOut, animations: {
+        UIView.animate(withDuration: 0.2, delay: 0.0, options: UIViewAnimationOptions.curveEaseOut, animations: {
             self.alpha = 0.0
             }, completion: {
                 (finished: Bool) -> Void in
                 // On main thread
-                dispatch_async(dispatch_get_main_queue()) {
-                    () -> Void in
+                DispatchQueue.main.async {
                     self.contenerForImage.removeFromSuperview()
                     self.removeFromSuperview()
                     self.layerBlack.removeFromSuperview()
@@ -384,23 +395,25 @@ public class AlertViewLoveNotification: UIView {
     
     func onClick(){
         self.hide()
-        let notificationTypes: UIUserNotificationType = [UIUserNotificationType.Alert, UIUserNotificationType.Badge, UIUserNotificationType.Sound]
-        let pushNotificationSettings = UIUserNotificationSettings(forTypes: notificationTypes, categories: nil)
-        UIApplication.sharedApplication().registerUserNotificationSettings(pushNotificationSettings)
-        UIApplication.sharedApplication().registerForRemoteNotifications()
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert])
+        { (granted, error) in
+            if granted == true {
+                UIApplication.shared.registerForRemoteNotifications()
+            }
+        }
     }
     
     // --------------------------------------------------------------
     //MARK: NOTIFICATIONS PROCESS -----------------------------------
     // --------------------------------------------------------------
     private func interceptOrientationChange(){
-        UIDevice.currentDevice().beginGeneratingDeviceOrientationNotifications()
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(AlertViewLoveNotification.onOrientationChange), name: UIDeviceOrientationDidChangeNotification, object: nil)
+        UIDevice.current.beginGeneratingDeviceOrientationNotifications()
+        NotificationCenter.default.addObserver(self, selector: #selector(AlertViewLoveNotification.onOrientationChange), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
     }
     
     func onOrientationChange(){
         if let superview = self.superview {
-            self.configureConstraints(superview)
+            self.configureConstraints(superView: superview)
         }
     }
     
@@ -446,20 +459,20 @@ public class AlertViewLoveNotification: UIView {
     
     struct ScreenSize
     {
-        static let SCREEN_WIDTH         = UIScreen.mainScreen().bounds.size.width
-        static let SCREEN_HEIGHT        = UIScreen.mainScreen().bounds.size.height
+        static let SCREEN_WIDTH         = UIScreen.main.bounds.size.width
+        static let SCREEN_HEIGHT        = UIScreen.main.bounds.size.height
         static let SCREEN_MAX_LENGTH    = max(ScreenSize.SCREEN_WIDTH, ScreenSize.SCREEN_HEIGHT)
         static let SCREEN_MIN_LENGTH    = min(ScreenSize.SCREEN_WIDTH, ScreenSize.SCREEN_HEIGHT)
     }
     
     struct DeviceType
     {
-        static let IS_IPHONE_4_OR_LESS  = UIDevice.currentDevice().userInterfaceIdiom == .Phone && ScreenSize.SCREEN_MAX_LENGTH < 568.0
-        static let IS_IPHONE_5          = UIDevice.currentDevice().userInterfaceIdiom == .Phone && ScreenSize.SCREEN_MAX_LENGTH == 568.0
-        static let IS_IPHONE_6          = UIDevice.currentDevice().userInterfaceIdiom == .Phone && ScreenSize.SCREEN_MAX_LENGTH == 667.0
-        static let IS_IPHONE_6P         = UIDevice.currentDevice().userInterfaceIdiom == .Phone && ScreenSize.SCREEN_MAX_LENGTH == 736.0
-        static let IS_IPAD              = UIDevice.currentDevice().userInterfaceIdiom == .Pad && ScreenSize.SCREEN_MAX_LENGTH == 1024.0
-        static let IS_IPAD_PRO          = UIDevice.currentDevice().userInterfaceIdiom == .Pad && ScreenSize.SCREEN_MAX_LENGTH == 1366.0
+        static let IS_IPHONE_4_OR_LESS  = UIDevice.current.userInterfaceIdiom == .phone && ScreenSize.SCREEN_MAX_LENGTH < 568.0
+        static let IS_IPHONE_5          = UIDevice.current.userInterfaceIdiom == .phone && ScreenSize.SCREEN_MAX_LENGTH == 568.0
+        static let IS_IPHONE_6          = UIDevice.current.userInterfaceIdiom == .phone && ScreenSize.SCREEN_MAX_LENGTH == 667.0
+        static let IS_IPHONE_6P         = UIDevice.current.userInterfaceIdiom == .phone && ScreenSize.SCREEN_MAX_LENGTH == 736.0
+        static let IS_IPAD              = UIDevice.current.userInterfaceIdiom == .pad && ScreenSize.SCREEN_MAX_LENGTH == 1024.0
+        static let IS_IPAD_PRO          = UIDevice.current.userInterfaceIdiom == .pad && ScreenSize.SCREEN_MAX_LENGTH == 1366.0
     }
     
     // -----------------------------------------------------
@@ -467,7 +480,7 @@ public class AlertViewLoveNotification: UIView {
     // -----------------------------------------------------
     
     private func getTopViewController() -> UIViewController? {
-        var topController: UIViewController? = UIApplication.sharedApplication().keyWindow?.rootViewController
+        var topController: UIViewController? = UIApplication.shared.keyWindow?.rootViewController
         while topController?.presentedViewController != nil {
             topController = topController?.presentedViewController
         }
