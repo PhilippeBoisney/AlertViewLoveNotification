@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="YNs-Hb-wFK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="GaW-Tu-50A">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
-        <scene sceneID="okT-k7-tN7">
+        <scene sceneID="91d-r6-TWs">
             <objects>
-                <viewController id="YNs-Hb-wFK" customClass="ViewController" customModule="AlertViewLoveNotification" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="GaW-Tu-50A" customClass="ViewController" customModule="AlertViewLoveNotification" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="aIb-aK-OYK"/>
-                        <viewControllerLayoutGuide type="bottom" id="0it-cs-Ndz"/>
+                        <viewControllerLayoutGuide type="top" id="KkE-1a-baG"/>
+                        <viewControllerLayoutGuide type="bottom" id="rIf-bv-2nJ"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="nEa-8l-NtI">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <view key="view" contentMode="scaleToFill" id="DTJ-tx-a2d">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kcV-4q-qRv">
-                                <rect key="frame" x="200" y="200" width="200" height="200"/>
-                                <color key="backgroundColor" red="0.6705882353" green="0.69411764710000001" blue="0.76862745099999996" alpha="1" colorSpace="calibratedRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N3u-Bb-7ma">
+                                <color key="backgroundColor" red="0.6705882353" green="0.69411764710000001" blue="0.76862745099999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="RUh-ZD-wEB"/>
-                                    <constraint firstAttribute="width" constant="200" id="vyW-pQ-2o0"/>
+                                    <constraint firstAttribute="height" constant="200" id="QPc-4U-K6i"/>
+                                    <constraint firstAttribute="width" constant="200" id="nLA-I8-cPz"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="15"/>
                                 <state key="normal" title="NOTIFY ME">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -34,20 +34,20 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="onTouch:" destination="YNs-Hb-wFK" eventType="touchUpInside" id="Ov6-UZ-SHn"/>
+                                    <action selector="onTouch:" destination="GaW-Tu-50A" eventType="touchUpInside" id="ODk-0k-BzH"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.74117647060000003" green="0.84705882349999995" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.74117647060000003" green="0.84705882349999995" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="kcV-4q-qRv" firstAttribute="centerX" secondItem="nEa-8l-NtI" secondAttribute="centerX" id="6hJ-DL-xms"/>
-                            <constraint firstItem="kcV-4q-qRv" firstAttribute="centerY" secondItem="nEa-8l-NtI" secondAttribute="centerY" id="NLT-Wz-7l3"/>
+                            <constraint firstItem="N3u-Bb-7ma" firstAttribute="centerX" secondItem="DTJ-tx-a2d" secondAttribute="centerX" id="OE6-tZ-xoS"/>
+                            <constraint firstItem="N3u-Bb-7ma" firstAttribute="centerY" secondItem="DTJ-tx-a2d" secondAttribute="centerY" id="uu8-3O-MFR"/>
                         </constraints>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Jl0-vp-k1L" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lcy-60-6Ng" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="565" y="451"/>
+            <point key="canvasLocation" x="20" y="135"/>
         </scene>
     </scenes>
 </document>

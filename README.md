@@ -32,7 +32,7 @@ pod 'AlertViewLoveNotification'
 
 #### Manually
 1. Download and drop ```AlertViewLoveNotification.swift``` in your project.  
-2. Congratulations! 
+2. Congratulations!
 
 ## USAGE
 ```swift
@@ -86,9 +86,10 @@ self.alertView.colorTextColorButtonNO = UIColor(red:0.29, green:0.29, blue:0.29,
 - [x] Multi-Device Full Support
 - [x] Rotation Support
 - [x] Fully customizable
+- [x] Swift 3 Support
 
 ## Version
-1.2
+1.3
 
 ## Author
 Philippe BOISNEY (phil.boisney(@)gmail.com)
