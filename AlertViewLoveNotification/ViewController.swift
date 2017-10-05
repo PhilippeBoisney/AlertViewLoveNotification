@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.alertView = AlertViewLoveNotification(imageName: "iconNotification", labelTitle: "ENABLE PUSH NOTIFICATIONS", labelDescription: "Would you like to be alerted about us, at any moment, even when you're sleeping ? Because we miss you... Always.", buttonYESTitle: "Yes, Of course !", buttonNOTitle: "No, sorry.")
+        self.alertView = AlertViewLoveNotification(imageName: "iconNotification", labelTitle: "ENABLE PUSH NOTIFICATIONS", labelDescription: "Would you like to be alerted about us, at any moment, even when you're sleeping ? Because we miss you... Always.", buttonYESTitle: "Yes, Of course !", buttonNOTitle: "No, sorry..")
     }
     
     override func didReceiveMemoryWarning() {
