@@ -157,7 +157,7 @@ open class AlertViewLoveNotification: UIView {
     }
     
     //Hide onboarding with animation
-    open func hide(){
+    @objc open func hide(){
         DispatchQueue.main.async {
             self.animateForEnding()
         }
@@ -393,7 +393,7 @@ open class AlertViewLoveNotification: UIView {
     //MARK: BUTTON ACTIONS ---------------------------------
     // -----------------------------------------------------
     
-    func onClick(){
+    @objc func onClick(){
         self.hide()
         let notificationTypes: UIUserNotificationType = [UIUserNotificationType.alert, UIUserNotificationType.badge, UIUserNotificationType.sound]
         let pushNotificationSettings = UIUserNotificationSettings(types: notificationTypes, categories: nil)
@@ -409,7 +409,7 @@ open class AlertViewLoveNotification: UIView {
         NotificationCenter.default.addObserver(self, selector: #selector(AlertViewLoveNotification.onOrientationChange), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
     }
     
-    func onOrientationChange(){
+    @objc func onOrientationChange(){
         if let superview = self.superview {
             self.configureConstraints(superview)
         }

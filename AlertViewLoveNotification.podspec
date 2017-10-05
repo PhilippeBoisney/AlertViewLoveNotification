@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 s.name             = "AlertViewLoveNotification"
-s.version          = "1.3"
+s.version          = "1.4"
 s.summary          = "AlertViewLoveNotification"
 s.description      = "A simple and attractive AlertView to ask permission to your users for Push Notification."
 s.homepage         = "https://github.com/PhilippeBoisney/AlertViewLoveNotification"
